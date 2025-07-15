@@ -54,11 +54,6 @@ app.get('/users/:id', async (req, res) => {
             projection: { name: 1, _id: 1 }
         });
 
-
-        // Cursor 객체: 데이터를 한개씩 순차적으로 가져와 document를 반환. 한번에 다 가져오지 않고 순차적으로 반환.
-        //const users = await collection.find().toArray();
-        //console.log("🚀 users.length:", users.length);
-        //console.log("🚀 users:", users);
         // 응답
         res.status(200).json(user);
 
