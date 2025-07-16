@@ -46,12 +46,10 @@ const user = {
 const isAccessAdminPage = user.isLoggedIn && user.role === "admin"
 console.log("🚀 ~ isAccessAdminPage:", isAccessAdminPage)
 
-if (isAccessAdminPage) {
-    console.log("관리자 페이지에 접근하실수 있습니다.");
-}
-else {
-    console.log("관리자 페이지에 접근하실수 없습니다.");
-}
+console.log(
+    isAccessAdminPage ? "관리자 페이지에 접근하실수 있습니다." : "관리자 페이지에 접근하실수 없습니다."
+)
+
 
 // 로그인 된 사용자 "이거나" 롤이 admin인 사용자면 true
 const isAccessUserPage = user.isLoggedIn || user.role === "user"
@@ -64,3 +62,36 @@ const double = (num = 1) => {
 
 console.log("double1:", double());
 console.log("double1:", double(2));
+
+// Todo: 삼항 연산자
+// score값이 60점 이상이면 "합격", 60점 미만이면 "탈락"
+const score = 60;
+const result = score >= 60 ? "합격" : "탈락";
+console.log("🚀 ~ result:", result)
+
+// Todo: spread syntex
+// 배열이나 객체를 개별요소로 분해하거나 결합할때 사용되는 문법
+console.log("animals", animals);
+const copyArr = [...animals, "value"];
+console.log("🚀 ~ animals:", animals);
+console.log("🚀 ~ copyArr:", copyArr);
+
+const todoItem = {
+    id: 1,
+    content: "React공부하기",
+};
+
+const newItem = {
+    ...todoItem,
+    isComplete: false, // 기존에 존재하지 않는 키값: 추가
+    content: "MongoDB 공부하기" // 기존에 존재하는 키값: 수정
+};
+
+console.log("🚀 ~ todoItem:", todoItem);
+console.log("🚀 ~ newItem:", newItem);
+
+// Todo: javascript 에서 false 로 간주
+// 숫자 0
+// string ""
+// null
+// undefined
